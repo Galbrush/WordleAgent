@@ -16,9 +16,9 @@ def check_double_letters(string):
             doubles.append(letter)
     
     if len(doubles) == 0:
-        return True
+        return False
     
-    return False
+    return True
 
 #1st step: sort alphabet by frequency of use by adding values
 
@@ -36,11 +36,15 @@ for word in strWordleListSplit:
     myDickWords[word] = wordvalue
 
 #4th step: eliminate double letters
+print(myDickWords.keys())
 for key in list(myDickWords.keys()):
+    print("this is the key")
+    print(key)
     if check_double_letters(key) == True:
-        del myDickWords[key]
+         removed = myDickWords.pop(key)
+         print(removed)
 
-pprint(myDickWords)
+#pprint.pprint(myDickWords)
 perfect_word = max(myDickWords.items(), key=operator.itemgetter(1))[0]
 
 print(perfect_word)
