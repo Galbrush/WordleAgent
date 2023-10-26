@@ -36,13 +36,13 @@ for word in strWordleListSplit:
     myDickWords[word] = wordvalue
 
 #4th step: eliminate double letters
-print(myDickWords.keys())
+#print(myDickWords.keys())
 for key in list(myDickWords.keys()):
-    print("this is the key")
-    print(key)
+    #print("this is the key")
+    #print(key)
     if check_double_letters(key) == True:
          removed = myDickWords.pop(key)
-         print(removed)
+         #print(removed)
 
 #pprint.pprint(myDickWords)
 perfect_word = max(myDickWords.items(), key=operator.itemgetter(1))[0]
